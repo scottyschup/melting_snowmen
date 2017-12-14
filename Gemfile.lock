@@ -1,0 +1,13 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    literate_randomizer (0.4.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  literate_randomizer
+
+BUNDLED WITH
+   1.14.6
