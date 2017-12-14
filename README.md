@@ -1,1 +1,1 @@
-# ![Melting Snowmen](./imgs/title.ascii-art)
+# ![Melting Snowmen](https://raw.githubusercontent.com/scottyschup/melting_snowmen/master/imgs/snowman.ascii-art)
