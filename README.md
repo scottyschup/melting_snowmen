@@ -27,6 +27,7 @@
 # Usage
 ```sh
 git clone git@github.com:scottyschup/melting_snowmen.git
+cd melting_snowmen
 bundle
 ruby src/game.rb
 ```
