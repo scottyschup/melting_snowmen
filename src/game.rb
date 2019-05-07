@@ -1,4 +1,5 @@
 require 'literate_randomizer'
+require 'io/console'
 require_relative '../lib/monkey_patches.rb'
 require_relative './snowman.rb'
 
@@ -25,7 +26,7 @@ class Game
       render_title
       render_snowman
       render_word
-      puts '    Congratulations! You win!'
+      puts '\n    Congratulations! You win!'
     else
       system('clear')
       render_title
@@ -37,14 +38,14 @@ class Game
   private
 
   def ask_for_guess
-    puts '    Guess a letter:'
+    print "\n    Guess a letter:"
     gets.to_s.strip.first
   end
 
   def check_guess(guess)
     until !guess.nil? && !guess.empty? && !@previous_guesses.include?(guess)
       render_all
-      puts '    Not a valid guess. Try again!'
+      print "\n    Not a valid guess. Try again!"
       guess = ask_for_guess
     end
 
@@ -87,7 +88,7 @@ class Game
     when 'i'
       :impossible
     else
-      puts "    I didn't recognize that input. Let's try again."
+      print "\n    I didn't recognize that input. Let's try again."
       nil
     end
   end
@@ -116,7 +117,7 @@ class Game
   end
 
   def render_previous_guesses
-    puts '    Previous guesses: ' + @previous_guesses.sort.join(', ')
+    print "\n    Previous guesses: " + @previous_guesses.sort.join(', ')
   end
 
   def render_snowman(stripped: false)
@@ -131,20 +132,20 @@ class Game
 
   def render_word
     puts
-    puts "    " + @display_word.join(' ')
+    print "\n    " + @display_word.join(' ')
   end
 
   def request_difficulty
     until @difficulty
-      puts '    What difficulty level would you like to try?'
-      puts '    Choose from: (e)asy (m)edium (h)ard (i)mpossible'
-      @difficulty = handle_difficulty_input(gets.strip.first)
+      puts "\n    What difficulty level would you like to try?"
+      print '    Choose from: (e)asy (m)edium (h)ard (i)mpossible '
+      @difficulty = handle_difficulty_input(STDIN.getch)
     end
   end
 
   def request_length
     unless @length
-      puts '    How long should the secret word be? (Between 5 and 18 characters)'
+      print "\n    How long should the secret word be? (Between 5 and 18 characters)"
       @length = handle_length_input(gets.strip)
     end
   end
