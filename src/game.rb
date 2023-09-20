@@ -26,7 +26,7 @@ class Game
       render_title
       render_snowman
       render_word
-      puts '\n    Congratulations! You win!'
+      puts "\n    Congratulations! You win!"
     else
       system('clear')
       render_title
