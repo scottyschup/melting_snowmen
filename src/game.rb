@@ -22,13 +22,13 @@ class Game
     end
 
     if won?
-      system('clear')
+      system('cls')
       render_title
       render_snowman
       render_word
       puts "\n    Congratulations! You win!"
     else
-      system('clear')
+      system('cls')
       render_title
       render_loser_sun
       render_snowman(stripped: true)
@@ -125,7 +125,7 @@ class Game
   end
 
   def render_title
-    system('clear')
+    system('cls')
     puts File.readlines(TITLE_IMG)
     puts
   end
@@ -151,7 +151,7 @@ class Game
   end
 
   def reset_view
-    system('clear')
+    system('cls')
   end
 
   def reveal_letter(guess)
